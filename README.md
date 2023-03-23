@@ -5,7 +5,7 @@ This repo is made for my friend Javier who is building an IoT based drink dispen
 
 ## Clone repo
 ```bash
-git clone https://github.com/NathanLazo/javier.git
+git clone https://github.com/NathanLazo/drink-bot.git
 ```
 
 ## Install dependencies
