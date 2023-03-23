@@ -1,5 +1,23 @@
 import '@/styles/globals.css'
+import React from "react";
+import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Toaster
+        position='top-center'
+        reverseOrder={false}
+        gutter={8}
+        toastOptions={{
+          // Define default options
+          style: {
+            background: "#000",
+            color: "#fff",
+          },
+        }}
+      />
+      <Component {...pageProps} />
+    </>
+  );
 }
