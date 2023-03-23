@@ -49,7 +49,7 @@ const Admin = () => {
   return (
     <>
       <div className='min-h-full'>
-        <Disclosure as='nav' className='border-b border-gray-200 bg-white'>
+        <Disclosure as='nav' className='border-b border-white bg-zinc-900'>
           {({ open }) => (
             <>
               <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
@@ -58,12 +58,12 @@ const Admin = () => {
                     <div className='flex flex-shrink-0 items-center'>
                       <img
                         className='block h-8 w-auto lg:hidden'
-                        src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+                        src='https://tailwindui.com/img/logos/mark.svg?color=red&shade=600'
                         alt='Your Company'
                       />
                       <img
                         className='hidden h-8 w-auto lg:block'
-                        src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
+                        src='https://tailwindui.com/img/logos/mark.svg?color=red&shade=600'
                         alt='Your Company'
                       />
                     </div>
@@ -74,8 +74,8 @@ const Admin = () => {
                           href={item.href}
                           className={classNames(
                             item.current
-                              ? "border-indigo-500 text-gray-900"
-                              : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                              ? "border-red-500 text-white"
+                              : "border-transparent text-white hover:border-white hover:text-white",
                             "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
                           )}
                           aria-current={item.current ? "page" : undefined}
@@ -86,18 +86,10 @@ const Admin = () => {
                     </div>
                   </div>
                   <div className='hidden sm:ml-6 sm:flex sm:items-center'>
-                    <button
-                      type='button'
-                      className='rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-                    >
-                      <span className='sr-only'>View notifications</span>
-                      <BellIcon className='h-6 w-6' aria-hidden='true' />
-                    </button>
-
                     {/* Profile dropdown */}
-                    <Menu as='div' className='relative ml-3'>
+                    <Menu as='div' className='relative ml-3 bg-zinc-900'>
                       <div>
-                        <Menu.Button className='flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                        <Menu.Button className='flex max-w-xs items-center rounded-full bg-zinc-900 text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2'>
                           <span className='sr-only'>Open user menu</span>
                           <img className='h-8 w-8 rounded-full' src={user.imageUrl} alt='' />
                         </Menu.Button>
@@ -111,15 +103,15 @@ const Admin = () => {
                         leaveFrom='transform opacity-100 scale-100'
                         leaveTo='transform opacity-0 scale-95'
                       >
-                        <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
+                        <Menu.Items className='absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-zinc-800 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                           {userNavigation.map(item => (
                             <Menu.Item key={item.name}>
                               {({ active }) => (
                                 <a
                                   href={item.href}
                                   className={classNames(
-                                    active ? "bg-gray-100" : "",
-                                    "block px-4 py-2 text-sm text-gray-700"
+                                    active ? "bg-zinc-700" : "",
+                                    "block px-4 py-2 text-sm text-white"
                                   )}
                                 >
                                   {item.name}
@@ -133,7 +125,7 @@ const Admin = () => {
                   </div>
                   <div className='-mr-2 flex items-center sm:hidden'>
                     {/* Mobile menu button */}
-                    <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'>
+                    <Disclosure.Button className='inline-flex items-center justify-center rounded-md bg-white p-2 text-white hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2'>
                       <span className='sr-only'>Open main menu</span>
                       {open ? (
                         <XMarkIcon className='block h-6 w-6' aria-hidden='true' />
@@ -154,8 +146,8 @@ const Admin = () => {
                       href={item.href}
                       className={classNames(
                         item.current
-                          ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                          : "border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800",
+                          ? "border-red-500 bg-red-50 text-red-700"
+                          : "border-transparent text-white hover:border-white hover:bg-whitehover:text-white",
                         "block border-l-4 py-2 pl-3 pr-4 text-base font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
@@ -164,22 +156,15 @@ const Admin = () => {
                     </Disclosure.Button>
                   ))}
                 </div>
-                <div className='border-t border-gray-200 pt-4 pb-3'>
+                <div className='border-t border-white pt-4 pb-3'>
                   <div className='flex items-center px-4'>
                     <div className='flex-shrink-0'>
                       <img className='h-10 w-10 rounded-full' src={user.imageUrl} alt='' />
                     </div>
                     <div className='ml-3'>
-                      <div className='text-base font-medium text-gray-800'>{user.name}</div>
-                      <div className='text-sm font-medium text-gray-500'>{user.email}</div>
+                      <div className='text-base font-medium text-white'>{user.name}</div>
+                      <div className='text-sm font-medium text-white'>{user.email}</div>
                     </div>
-                    <button
-                      type='button'
-                      className='ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-                    >
-                      <span className='sr-only'>View notifications</span>
-                      <BellIcon className='h-6 w-6' aria-hidden='true' />
-                    </button>
                   </div>
                   <div className='mt-3 space-y-1'>
                     {userNavigation.map(item => (
@@ -187,7 +172,7 @@ const Admin = () => {
                         key={item.name}
                         as='a'
                         href={item.href}
-                        className='block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800'
+                        className='block px-4 py-2 text-base font-medium text-white hover:bg-white hover:text-white'
                       >
                         {item.name}
                       </Disclosure.Button>
@@ -199,10 +184,10 @@ const Admin = () => {
           )}
         </Disclosure>
 
-        <div className='py-10'>
+        <div className='py-10 bg-zinc-900 h-screen'>
           <header>
             <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-              <h1 className='text-3xl font-bold leading-tight tracking-tight text-gray-900'>
+              <h1 className='text-3xl font-bold leading-tight tracking-tight text-white'>
                 Dashboard
               </h1>
             </div>
