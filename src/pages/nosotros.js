@@ -47,7 +47,9 @@ const people = [
 
 const Admin = () => {
   useEffect(() => {
-    toast.success("Follow Us!");
+    toast("Follow Us!", {
+      icon: "📸",
+    });
   }, []);
 
   return (
