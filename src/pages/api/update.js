@@ -1,4 +1,4 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+//Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { app } from "../../utils/firebase";
 import { getDatabase, ref, update } from "firebase/database";
 

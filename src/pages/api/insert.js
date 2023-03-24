@@ -9,8 +9,11 @@ export default function handler(req, res) {
     push(reference, {
       type: req.body.type,
       done: false,
+      valve: req.body.valve,
+      bomb: req.body.bomb,
     });
+    res.status(200).json({ message: "all done" });
   } catch (error) {
-    res.status(400).json({ error: error });
+    res.status(400).json({ error: error, message: "Error mi pandx" });
   }
 }
