@@ -5,7 +5,7 @@ import Avatar from "boring-avatars";
 // Images
 
 import Image from "next/image";
-import { toast } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const user = {
   name: "DrinkBot",

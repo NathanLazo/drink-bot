@@ -4,16 +4,16 @@ import { getDatabase, ref, get } from "firebase/database";
 
 export default function handler(req, res) {
   const db = getDatabase(app);
-  const reference = ref(db, "pedidos/" + req.body.id);
+  const reference = ref(db, "pedidos/");
   get(reference)
     .then(snapshot => {
       if (snapshot.exists()) {
-        res.status(200);
+        return res.status(200).json(snapshot.val());
       } else {
-        res.status(400).json({ error: "No data available" });
+        return res.status(400).json({ error: "No data available" });
       }
     })
     .catch(error => {
-      res.status(500).json({ error: error });
+      return res.status(500).json({ error: error });
     });
 }
